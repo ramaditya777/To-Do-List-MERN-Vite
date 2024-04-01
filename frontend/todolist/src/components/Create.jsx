@@ -6,7 +6,7 @@ const Create = () => {
   const [task, setTask] = useState(''); // Providing a default value for task
 
   const handleAdd = () => {
-    axios.post('http://127.0.0.1:8080/add', { task: task })
+    axios.post('http://127.0.0.1:8080/todos/add', { task: task })
       .then(result => location.reload())
       .catch(err => console.log(err))
   }

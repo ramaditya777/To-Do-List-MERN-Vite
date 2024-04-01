@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/get")
+      .get("http://localhost:8080/todos/get")
       .then((response) => {
         setTodos(response.data); // Assuming setTodos is a state setter function
       })
@@ -24,7 +24,7 @@ const Home = () => {
   //Handle Edit
   const handleEdit = (id) => {
     axios
-      .put("http://localhost:8080/update/" + id)
+      .put("http://localhost:8080/todos/update/" + id)
       .then((response) => {
        location.reload()
       })
@@ -35,7 +35,7 @@ const Home = () => {
   //Delete
   const handleDelete=(id)=>{
     axios
-    .delete("http://localhost:8080/delete/" + id)
+    .delete("http://localhost:8080/todos/delete/" + id)
     .then((response) => {
      location.reload();
     })
